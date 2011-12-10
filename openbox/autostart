@@ -1,0 +1,13 @@
+sh /home/robbinsr/.fehbg &
+
+amixer set Speaker off &
+
+cp /home/robbinsr/.config/openbox/scripts/f4.sh{.default,} &
+
+terminator --geometry 700x400+150+150 &
+
+tint2 &
+
+# /usr/lib/notification-daemon-1.0/notification-daemon &
+
+# (sleep 1 && conky ) &
