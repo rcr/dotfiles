@@ -1,0 +1,83 @@
+Xdefaults:
+--------------------------------------------------------
+
+Rxvt*title:             urxvt
+Rxvt*termName:          rxvt-256color
+
+Rxvt*font: 							xft:Mono:size=8
+
+Rxvt*background:        #1a1a1a
+Rxvt*foreground:        #b7b7b7
+Rxvt*cursorColor:       #b7b7b7
+Rxvt*colorUL:           #b7b7b7
+
+Rxvt*scrollBar:         false
+Rxvt*secondaryscroll:   true
+Rxvt*cursorBlink:       true
+Rxvt*cursorUnderline:   true
+
+Rxvt*perl-ext-common:   default,matcher,clipboard
+Rxvt*urlLauncher:       /usr/bin/chromium
+Rxvt*matcher.button:    1
+Rxvt*keysym.C-v:        perl:clipboard:paste
+
+
+!Rxvt*borderLess:        true
+!Rxvt*transparent:       true
+!Rxvt*shading:           40 
+Rxvt*allow_bold:        true
+Rxvt*depth:             24
+Rxvt*dynamicColors:     on
+
+Rxvt*mapAlert:          true
+Rxvt*visualBell:        false
+Rxvt*urgentOnBell:      true
+
+!BLACK
+Rxvt*color0:            #2e0000
+Rxvt*color8:            #500000
+!RED
+Rxvt*color1:            #8f2a2a
+Rxvt*color9:            #d81b1b
+!GREEN
+Rxvt*color2:            #236724
+Rxvt*color10:           #64d266
+!YELLOW
+Rxvt*color3:            #dabc35
+Rxvt*color11:           #ccbe7d
+!BLUE
+Rxvt*color4:            #363366
+Rxvt*color12:           #a7a4d1
+!MAGENTA
+Rxvt*color5:            #a00f76
+Rxvt*color13:           #ba6fa4
+!CYAN
+Rxvt*color6:            #039f87
+Rxvt*color14:           #74bfb4
+!WHITE
+Rxvt*color7:            #b0b0b0
+Rxvt*color15:           #d6fff9
+
+
+xinitrc
+--------------------------------------------------------
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+#Key press-and-hold rate:
+xset r rate 250 40 &
+
+amixer -q set Master mute &
+
+#exec /home/robbinsr/projects/wm/output
+exec awesome

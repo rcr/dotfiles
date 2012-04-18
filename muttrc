@@ -8,7 +8,7 @@ set from="mail@robbinsr.com
 
 set mail_check=300
 
-set spoolfile=imaps://robbinsr@fastmail.fm:xxxxxxxxxxxxxxx@$my_server/INBOX
+set spoolfile=imaps://robbinsr@fastmail.fm:XXXXXXXXXXXXXXXXX@$my_server/INBOX
 
 set folder="~/mail"
 

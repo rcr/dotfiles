@@ -5,38 +5,31 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\[\033[1;33m\]user: \W/\[\033[0m\] '
+PS1='> \W/ '
 
 eval $(dircolors -b)
 
-export PATH=/opt/flex/bin:$PATH
-export EDITOR=vim
+export EDITOR="vim"
 export GREP_COLOR="1;33"
 
 alias sudo='sudo '
+alias ..='cd ..'
+alias e="exit"
+alias v="vim -O"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias ..='cd ..'
 alias mkdir='mkdir -p -v'
 alias wicd="wicd-curses"
 alias alsa="alsamixer"
+alias todo="vim ~/docs/todo"
 alias shutdown="sudo shutdown -h now"
-alias todo="vim /etc/conky/conky_todo"
-alias v="vim -O" #-O switch so you can open multiple files in vertical split
-alias ch="setsid chromium &> /dev/null"
-alias irc="setsid terminator --geometry 683x748+0+0 -T Irssi -e irssi &> /dev/null"
-alias mu="setsid terminator --geometry 683x748+0+0 -T Mutt -e mutt &> /dev/null"
-alias e="exit"
+alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
+alias scrot="scrot /home/robbinsr/pictures/screenshots/scrot-%F-%H%M%S.png"
+alias feh="feh --fullscreen"
+alias uzbl="uzbl-browser -u www.uzbl.org/keybindings.php &> /dev/null &"
 
-#Functions for aliases with arguments
-pdf () { setsid epdfview "$1" &> /dev/null;}
-doc () { setsid libreoffice "$1" &> /dev/null;}
-sanitize() {	#reset owner and permission to default values
-  chmod -R u=rwX,go=rX "$@"
-  chown -R ${USER}:users "$@"
-}
-f4 () { cp $1 /home/robbinsr/.config/openbox/scripts/f4.sh; echo "Script set";}
-ex () {			#extract any filetype
+pdf () { zathura $1 &> /dev/null & }
+ex () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
