@@ -9,7 +9,6 @@ PS1='> \W/ '
 
 eval $(dircolors -b)
 
-export EDITOR="vim"
 export GREP_COLOR="1;33"
 
 alias sudo='sudo '
@@ -19,14 +18,15 @@ alias v="vim -O"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
-alias wicd="wicd-curses"
 alias alsa="alsamixer"
-alias todo="vim ~/docs/todo"
-alias shutdown="sudo shutdown -h now"
-alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
-alias scrot="scrot /home/robbinsr/pictures/screenshots/scrot-%F-%H%M%S.png"
+alias wicd="wicd-curses"
 alias feh="feh --fullscreen"
-alias uzbl="uzbl-browser -u www.uzbl.org/keybindings.php &> /dev/null &"
+alias todo="vim ~/docs/todo"
+alias reboot="sudo shutdown -r now"
+alias shutdown="sudo shutdown -h now"
+alias scrot="scrot /home/robbinsr/scrot-%F-%H%M%S.png"
+alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
+alias irc="urxvt -title Weechat -e weechat-curses"
 
 pdf () { zathura $1 &> /dev/null & }
 ex () {
