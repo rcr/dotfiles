@@ -1,0 +1,5 @@
+#!/bin/sh
+
+amixer -q set Master 3dB+
+
+/home/robbinsr/.config/dwm/scripts/setroot

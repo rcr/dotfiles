@@ -1,63 +1,55 @@
 Xdefaults:
 --------------------------------------------------------
+URxvt*title:             urxvt
 
-Rxvt*title:             urxvt
-Rxvt*termName:          rxvt-256color
+URxvt*font:              xft:Termsyn:size=8
 
-Rxvt*font: 							xft:Mono:size=8
+URxvt*background:        #262626
+URxvt*foreground:        #c0c0c0
+URxvt*cursorColor:       #c0c0c0
+URxvt*colorUL:           #c0c0c0
 
-Rxvt*background:        #1a1a1a
-Rxvt*foreground:        #b7b7b7
-Rxvt*cursorColor:       #b7b7b7
-Rxvt*colorUL:           #b7b7b7
+URxvt*scrollBar:         false
+URxvt*secondaryscroll:   true
+URxvt*cursorBlink:       true
+URxvt*cursorUnderline:   true
 
-Rxvt*scrollBar:         false
-Rxvt*secondaryscroll:   true
-Rxvt*cursorBlink:       true
-Rxvt*cursorUnderline:   true
+URxvt*perl-ext-common:   default,matcher
+URxvt*urlLauncher:       /usr/bin/chromium
+URxvt*matcher.button:    1
 
-Rxvt*perl-ext-common:   default,matcher,clipboard
-Rxvt*urlLauncher:       /usr/bin/chromium
-Rxvt*matcher.button:    1
-Rxvt*keysym.C-v:        perl:clipboard:paste
+URxvt*allow_bold:        true
+URxvt*depth:             24
+URxvt*dynamicColors:     on
 
+URxvt*mapAlert:          true
+URxvt*visualBell:        false
+URxvt*urgentOnBell:      true
 
-!Rxvt*borderLess:        true
-!Rxvt*transparent:       true
-!Rxvt*shading:           40 
-Rxvt*allow_bold:        true
-Rxvt*depth:             24
-Rxvt*dynamicColors:     on
-
-Rxvt*mapAlert:          true
-Rxvt*visualBell:        false
-Rxvt*urgentOnBell:      true
-
-!BLACK
-Rxvt*color0:            #2e0000
-Rxvt*color8:            #500000
-!RED
-Rxvt*color1:            #8f2a2a
-Rxvt*color9:            #d81b1b
-!GREEN
-Rxvt*color2:            #236724
-Rxvt*color10:           #64d266
-!YELLOW
-Rxvt*color3:            #dabc35
-Rxvt*color11:           #ccbe7d
-!BLUE
-Rxvt*color4:            #363366
-Rxvt*color12:           #a7a4d1
-!MAGENTA
-Rxvt*color5:            #a00f76
-Rxvt*color13:           #ba6fa4
-!CYAN
-Rxvt*color6:            #039f87
-Rxvt*color14:           #74bfb4
-!WHITE
-Rxvt*color7:            #b0b0b0
-Rxvt*color15:           #d6fff9
-
+!black
+URxvt*color0:            #3d3d3d
+URxvt*color8:            #5e5e5e
+!red
+URxvt*color1:            #8c4665
+URxvt*color9:            #bf4d80
+!green
+URxvt*color2:            #287373
+URxvt*color10:           #53a6a6
+!yellow
+URxvt*color3:            #914e89
+URxvt*color11:           #bf85cc
+!blue
+URxvt*color4:            #395573
+URxvt*color12:           #477ab3
+!magenta
+URxvt*color5:            #5e468c
+URxvt*color13:           #7e62b3
+!cyan
+URxvt*color6:            #31658c
+URxvt*color14:           #6096bf
+!white
+URxvt*color7:            #899ca1
+URxvt*color15:           #c0c0c0
 
 xinitrc
 --------------------------------------------------------
@@ -74,10 +66,24 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#Key press-and-hold rate:
-xset r rate 250 40 &
+feh --bg-scale /home/robbinsr/.background.png
 
-amixer -q set Master mute &
+xset r rate 250 40
 
-#exec /home/robbinsr/projects/wm/output
-exec awesome
+amixer -q set Master mute
+
+while true; do
+  /home/robbinsr/.config/dwm/scripts/setroot
+  sleep 1
+done &
+
+exec dwm
+
+
+evdev
+--------------------------------------------------------
+Option "XkbOptions" "ctrl:nocaps"
+
+inittab
+--------------------------------------------------------
+c1:2345:respawn:/sbin/agetty -a robbinsr -8 38400 tty1 linux 
