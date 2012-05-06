@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+set -o vi
+bind -m vi-insert '"jj": vi-movement-mode'
+
 PS1='> \W/ '
 
 eval $(dircolors -b)

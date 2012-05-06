@@ -20,6 +20,8 @@ set softtabstop=2 "Width of a tab when inserting
 noremap ss :vsplit<CR>:Ex<CR>
 inoremap jj <Esc>
 nmap <Space> i_<Esc>r
+nnoremap ; :
+nnoremap : ;
 
 set hlsearch
 set smartcase

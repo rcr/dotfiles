@@ -31,7 +31,7 @@ static const Layout layouts[] = {
 
 static const Rule rules[] = {
   /* class            instance    title       tags mask    isfloating   monitor */
-  { "Chromium",       NULL,       NULL,       1 << 1,      True,        -1 },
+  { "Firefox",        NULL,       NULL,       1 << 1,      True,        -1 },
   { NULL,             NULL,       "Weechat",  1 << 2,      False,       -1 }, 
   { NULL,             NULL,       "Mutt",     1 << 3,      False,       -1 },
   { NULL,             NULL,       "Floating", 0,           True,        -1 }, 
@@ -40,7 +40,7 @@ static const Rule rules[] = {
 /* commands */
 static const char *termcmd[]      = { "urxvt", NULL };
 static const char *floattermcmd[] = { "urxvt", "-title", "Floating","-geometry","90x24+300+200", NULL };
-static const char *browsercmd[]   = { "chromium", NULL };
+static const char *browsercmd[]   = { "firefox", NULL };
 static const char *musiccmd[]     = { "urxvt", "-e", "ncmpcpp", NULL };
 static const char *muttcmd[]      = { "urxvt", "-title", "Mutt", "-e", "mutt", NULL };
 static const char *irccmd[]       = { "urxvt", "-title", "Weechat", "-e", "weechat-curses", NULL };
