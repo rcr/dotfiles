@@ -1,0 +1,13 @@
+"Go up/down half a page with k/j
+nmap j <C-d>
+nmap k <C-u>
+
+"alt j / k for tab navigation
+nmap <C-j> :tabprev<CR>
+nmap <C-k> :tabnext<CR>
+
+"remap d to tab search
+nnoremap d <S-s>
+
+"remap jj to escape
+cnoremap jj <Esc>
