@@ -28,9 +28,9 @@ alias feh="feh --fullscreen"
 alias todo="vim ~/docs/todo"
 alias reboot="sudo shutdown -r now"
 alias shutdown="sudo shutdown -h now"
-alias scrot="scrot /home/robbinsr/scrot-%F-%H%M%S.png"
-alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias irc="urxvt -title Weechat -e weechat-curses"
+alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
+alias umount="sudo umount"
 
 pdf () { zathura $1 &> /dev/null & }
 ex () {
