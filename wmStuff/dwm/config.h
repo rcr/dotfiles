@@ -10,6 +10,7 @@ static const char normfgcolor[]     = "#696969";
 static const char selbordercolor[]  = "#696969";
 static const char selbgcolor[]      = "#262626";
 static const char selfgcolor[]      = "#e0e0e0";
+static const char urgbgcolor[]      = "#c90000";
 
 static const char font[]            = "-*-clean-medium-r-*-*-12-*-*-*-*-*-*-*";
 
@@ -32,18 +33,13 @@ static const Layout layouts[] = {
 static const Rule rules[] = {
   /* class            instance    title       tags mask    isfloating   monitor */
   { "Firefox",        NULL,       NULL,       1 << 1,      True,        -1 },
-  { NULL,             NULL,       "Weechat",  1 << 2,      False,       -1 }, 
-  { NULL,             NULL,       "Mutt",     1 << 3,      False,       -1 },
   { NULL,             NULL,       "Floating", 0,           True,        -1 }, 
 };
 
 /* commands */
 static const char *termcmd[]      = { "urxvt", NULL };
-static const char *floattermcmd[] = { "urxvt", "-title", "Floating","-geometry","90x24+300+200", NULL };
-static const char *browsercmd[]   = { "firefox", NULL };
-static const char *musiccmd[]     = { "urxvt", "-e", "ncmpcpp", NULL };
-static const char *muttcmd[]      = { "urxvt", "-title", "Mutt", "-e", "mutt", NULL };
-static const char *irccmd[]       = { "urxvt", "-title", "Weechat", "-e", "weechat-curses", NULL };
+static const char *floattermcmd[] = { "urxvt", "-title", "Floating", "-geometry","90x24+300+200", NULL };
+static const char *musiccmd[]     = { "urxvt", "-title", "Floating", "-geometry","80x60+400+200","-e", "ncmpcpp", NULL };
 static const char *togglemute[]   = { "/home/robbinsr/.config/dwm/scripts/togglemute", NULL };
 static const char *voldown[]      = { "/home/robbinsr/.config/dwm/scripts/voldown", NULL };
 static const char *volup[]        = { "/home/robbinsr/.config/dwm/scripts/volup", NULL };
@@ -52,13 +48,10 @@ static Key keys[] = {
   /* modifier                     key        function        argument */
   { 0,                            XK_F2,     spawn,          {.v = floattermcmd } },
   { 0,                            XK_F3,     spawn,          {.v = termcmd } },
-  { 0,                            XK_F4,     spawn,          {.v = browsercmd } },
-  { 0,                            XK_F10,    spawn,          {.v = irccmd } },
-  { 0,                            XK_F11,    spawn,          {.v = musiccmd } },
-  { 0,                            XK_F12,    spawn,          {.v = muttcmd } },
-  { MODKEY,                       XK_F10,    spawn,          {.v = togglemute } }, 
-  { MODKEY,                       XK_F11,    spawn,          {.v = voldown } }, 
-  { MODKEY,                       XK_F12,    spawn,          {.v = volup } }, 
+  { 0,                            XK_F4,     spawn,          {.v = musiccmd } },
+  { 0,                            XK_F10,    spawn,          {.v = togglemute } }, 
+  { 0,                            XK_F11,    spawn,          {.v = voldown } }, 
+  { 0,                            XK_F12,    spawn,          {.v = volup } }, 
   { MODKEY,                       XK_b,      togglebar,      {0} },
   { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
   { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
