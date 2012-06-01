@@ -1,19 +1,11 @@
 #!/bin/sh
 
-now=$(cat /sys/class/power_supply/BAT0/charge_now)
-ful=$(cat /sys/class/power_supply/BAT0/charge_full)
-sts=$(cat /sys/class/power_supply/BAT0/status)
-bat=$(echo scale=2\; $now / $ful \* 100 |bc|rev|cut -c 4-|rev)%
-if [ "$sts" = Discharging ]
-  then bat="-$bat"
-  else bat="+$bat"
-fi
-
+mpd=$(ncmpcpp --now-playing '{%a - %t}|{%f}')
 vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
 mut=$(amixer get Master | tail -1 | grep "\[on\]")
 if [ "$mut" = "" ]
   then vol="M $vol"
-  else vol="  $vol"
+  else vol="$vol"
 fi
 
-xsetroot -name "$vol  ~  $bat  ~  $(date +%a\ %b\ %e\ %R)"
+xsetroot -name "$mpd  ~  $vol  ~  $(date +%a\ %b\ %e\ %R)"

@@ -28,10 +28,10 @@ alias feh="feh --fullscreen"
 alias todo="vim ~/docs/todo"
 alias reboot="sudo shutdown -r now"
 alias shutdown="sudo shutdown -h now"
-alias irc="urxvt -e weechat-curses"
 alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias umount="sudo umount"
-alias ff="firefox"
+alias irc="weechat-curses"
+alias ff="firefox &> /dev/null &"
 
 pdf () { zathura $1 &> /dev/null & }
 ex () {

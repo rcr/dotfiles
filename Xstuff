@@ -56,8 +56,6 @@ xinitrc
 #!/bin/sh
 #
 # ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
@@ -70,15 +68,14 @@ feh --bg-scale /home/robbinsr/.background.png
 
 xset r rate 250 40
 
-amixer -q set Master mute
-
 while true; do
   /home/robbinsr/.config/dwm/scripts/setroot
-  sleep 1
+  sleep 3
 done &
 
-exec dwm
+sleep 10 && /home/robbinsr/.config/dwm/scripts/launch
 
+exec dwm
 
 evdev
 --------------------------------------------------------
