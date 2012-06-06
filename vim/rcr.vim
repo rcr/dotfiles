@@ -1,150 +1,113 @@
-"0-8,9-16 are system colors
-"16-231 are colors
-"232-255 are grayscale ramp
-
-"166 = orange
-"245 = grey
-
-"hi Boolean              ctermfg=
-"hi CTagsClass           ctermfg=
-"hi CTagsGlobalConstant  ctermfg=
-"hi CTagsGlobalVariable  ctermfg=
-"hi CTagsImport          ctermfg=
-"hi CTagsMember          ctermfg=
-"hi Character            ctermfg=
-"hi Comment              ctermfg=
-"hi Conditional          ctermfg=
-"hi Constant             ctermfg=
-"hi Cursor               ctermfg=
-"hi CursorColumn         ctermfg=
-"hi CursorLine           ctermfg=
-"hi Debug                ctermfg=
-"hi Define               ctermfg=
-"hi DefinedName          ctermfg=
-"hi Delimiter            ctermfg=
-"hi DiffAdd              ctermfg=
-"hi DiffChange           ctermfg=
-"hi DiffDelete           ctermfg=
-"hi DiffText             ctermfg=
-"hi Directory            ctermfg=
-"hi EnumerationName      ctermfg=
-"hi EnumerationValue     ctermfg=
-"hi Error                ctermfg=
-"hi ErrorMsg             ctermfg=
-"hi Exception            ctermfg=
-"hi Float                ctermfg=
-"hi FoldColumn           ctermfg=
-"hi Folded               ctermfg=
-"hi Function             ctermfg=
-"hi Identifier           ctermfg=
-"hi Ignore               ctermfg=
-"hi IncSearch            ctermfg=
-"hi Include              ctermfg=
-"hi Keyword              ctermfg=
-"hi Label                ctermfg=
-"hi LineNr               ctermfg=
-"hi LocalVariable        ctermfg=
-"hi Macro                ctermfg=
-"hi MatchParen           ctermfg=
-"hi ModeMsg              ctermfg=
-"hi MoreMsg              ctermfg=
-"hi NonText              ctermfg=
-"hi Normal               ctermfg=
-"hi Number               ctermfg=
-"hi Operator             ctermfg=
-"hi PMenu                ctermfg=
-"hi PMenuSbar            ctermfg=
-"hi PMenuSel             ctermfg=
-"hi PMenuThumb           ctermfg=
-"hi PreCondit            ctermfg=
-"hi PreProc              ctermfg=
-"hi Question             ctermfg=
-"hi Repeat               ctermfg=
-"hi Search               ctermfg=
-"hi SignColumn           ctermfg=
-"hi Special              ctermfg=
-"hi SpecialChar          ctermfg=
-"hi SpecialComment       ctermfg=
-"hi SpecialKey           ctermfg=
-"hi SpellBad             ctermfg=
-"hi SpellCap             ctermfg=
-"hi SpellLocal           ctermfg=
-"hi SpellRare            ctermfg=
-"hi Statement            ctermfg=
-"hi StatusLine           ctermfg=
-"hi StatusLineNC         ctermfg=
-"hi StorageClass         ctermfg=
-"hi String               ctermfg=
-"hi Structure            ctermfg=
-"hi TabLine              ctermfg=
-"hi TabLineFill          ctermfg=
-"hi TabLineSel           ctermfg=
-"hi Tag                  ctermfg=
-"hi Title                ctermfg=
-"hi Todo                 ctermfg=
-"hi Type                 ctermfg=
-"hi Typedef              ctermfg=
-"hi Underlined           ctermfg=
-"hi Union                ctermfg=
-"hi VertSplit            ctermfg=
-"hi Visual               ctermfg=
-"hi VisualNOS            ctermfg=
-"hi WarningMsg           ctermfg=
-"hi WildMenu             ctermfg=
-"hi pythonBuiltin        ctermfg=
-"hi JavaScriptStrings    ctermfg=
-"hi phpStringSingle      ctermfg=
-"hi phpStringDouble      ctermfg=
-"hi htmlString           ctermfg=
-"hi htmlTagName          ctermfg=
-
-"------------------------------------
-
-hi Comment		ctermfg=240
-hi Constant		ctermfg=255
-hi Type				ctermfg=255 cterm=bold
-hi Statement	ctermfg=166 cterm=bold
-"hi String			ctermfg=
-
-"$var,${var}
-hi Identifier	ctermfg=245
-"#include,#define
-hi PreProc		ctermfg=255
-"\t,%d,etc
-hi Special		ctermfg=255
-hi Todo				ctermfg=166 cterm=bold ctermbg=32
-"hi Underlined	
-"hi Ignore		
-
-
-"Vim related:
-"hi Cursor
-"hi CursorIM	
-"hi Directory	
-"hi DiffAdd		
-"hi DiffChange	
-"hi DiffDelete	
-"hi DiffText	
-"hi ErrorMsg	
-"hi VertSplit	
-"hi Folded		
-"hi FoldColumn	
-"hi IncSearch	
-"hi LineNr 		ctermfg=240
-"hi MatchParen ctermfg=255 ctermbg=166 
-"hi ModeMsg		
-"hi MoreMsg		
-"hi NonText		
-"hi Question	
-"hi Search		
-"hi SpecialKey	
-"hi StatusLine	
-"hi StatusLineNC	
-"hi Title		
-"hi Visual		
-"hi VisualNOS	
-"hi WarningMsg	
-"hi WildMenu	
-"hi Menu		
-"hi Scrollbar	
-"hi Tooltip		
+hi IncSearch          ctermfg=235  ctermbg=11   cterm=NONE
+hi WildMenu           ctermfg=15   ctermbg=67   cterm=NONE
+"hi SignColumn 
+hi SpecialComment     ctermfg=252  ctermbg=NONE cterm=NONE
+hi Typedef            ctermfg=60   ctermbg=NONE cterm=NONE
+hi Title              ctermfg=223  ctermbg=52   cterm=NONE
+hi Folded             ctermfg=15   ctermbg=236  cterm=NONE
+"hi PreCondit 
+"hi Include 
+"hi TabLineSel 
+hi StatusLineNC       ctermfg=252  ctermbg=NONE cterm=NONE
+"hi CTagsMember 
+"hi NonText
+"hi CTagsGlobalConstant 
+hi DiffText           ctermfg=45   ctermbg=23   cterm=NONE
+hi ErrorMsg           ctermfg=15   ctermbg=NONE cterm=NONE
+"hi Ignore 
+hi Debug              ctermfg=252  ctermbg=NONE cterm=NONE
+"hi PMenuSbar 
+hi Identifier         ctermfg=107  ctermbg=NONE cterm=NONE
+hi SpecialChar        ctermfg=252  ctermbg=NONE cterm=NONE
+hi Conditional        ctermfg=60   ctermbg=NONE cterm=NONE
+hi StorageClass       ctermfg=60   ctermbg=NONE cterm=NONE
+hi Todo               ctermfg=11   ctermbg=NONE cterm=NONE
+hi Special            ctermfg=252  ctermbg=NONE cterm=NONE
+hi LineNr             ctermfg=241  ctermbg=NONE cterm=NONE
+hi StatusLine         ctermfg=15   ctermbg=60   cterm=NONE
+hi Normal             ctermfg=248  ctermbg=235  cterm=NONE
+hi Label              ctermfg=60   ctermbg=NONE cterm=NONE
+"hi CTagsImport 
+hi PMenuSel           ctermfg=15   ctermbg=17   cterm=NONE
+hi Search             ctermfg=235  ctermbg=11   cterm=NONE
+"hi CTagsGlobalVariable 
+hi Delimiter          ctermfg=252  ctermbg=NONE cterm=NONE
+hi Statement          ctermfg=67   ctermbg=NONE cterm=NONE
+"hi SpellRare 
+"hi EnumerationValue 
+hi Comment            ctermfg=241  ctermbg=NONE cterm=NONE
+hi Character          ctermfg=67   ctermbg=236  cterm=NONE
+"hi Float 
+hi Number             ctermfg=67   ctermbg=236  cterm=NONE
+hi Boolean            ctermfg=67   ctermbg=NONE cterm=NONE
+hi Operator           ctermfg=60   ctermbg=NONE cterm=NONE
+hi CursorLine         ctermfg=NONE ctermbg=238  cterm=NONE
+"hi Union 
+"hi TabLineFill 
+hi Question           ctermfg=15   ctermbg=NONE cterm=NONE
+hi WarningMsg         ctermfg=15   ctermbg=NONE cterm=NONE
+"hi VisualNOS 
+hi DiffDelete         ctermfg=184  ctermbg=52   cterm=NONE
+hi ModeMsg            ctermfg=15   ctermbg=NONE cterm=NONE
+hi CursorColumn       ctermfg=NONE ctermbg=238  cterm=NONE
+"hi Define 
+hi Function           ctermfg=107  ctermbg=NONE cterm=NONE
+hi FoldColumn         ctermfg=15   ctermbg=236  cterm=NONE
+"hi PreProc 
+"hi EnumerationName 
+hi Visual             ctermfg=248  ctermbg=236  cterm=NONE
+hi MoreMsg            ctermfg=15   ctermbg=NONE cterm=NONE
+"hi SpellCap 
+hi VertSplit          ctermfg=252  ctermbg=NONE cterm=NONE
+hi Exception          ctermfg=60   ctermbg=NONE cterm=NONE
+hi Keyword            ctermfg=60   ctermbg=NONE cterm=NONE
+hi Type               ctermfg=60   ctermbg=NONE cterm=NONE
+hi DiffChange         ctermfg=213  ctermbg=53   cterm=NONE
+hi Cursor             ctermfg=NONE ctermbg=107  cterm=NONE
+"hi SpellLocal 
+hi Error              ctermfg=NONE ctermbg=196  cterm=NONE
+hi PMenu              ctermfg=252  ctermbg=NONE cterm=NONE
+hi SpecialKey         ctermfg=75   ctermbg=NONE cterm=NONE
+hi Constant           ctermfg=67   ctermbg=236  cterm=NONE
+"hi DefinedName 
+hi Tag                ctermfg=252  ctermbg=NONE cterm=NONE
+hi String             ctermfg=67   ctermbg=236  cterm=NONE
+hi PMenuThumb         ctermfg=NONE ctermbg=241  cterm=NONE
+"hi MatchParen 
+"hi LocalVariable 
+hi Repeat             ctermfg=60   ctermbg=NONE cterm=NONE
+hi SpellBad           ctermfg=NONE ctermbg=196  cterm=NONE
+"hi CTagsClass 
+hi Directory          ctermfg=250  ctermbg=NONE cterm=NONE
+hi Structure          ctermfg=60   ctermbg=NONE cterm=NONE
+"hi Macro 
+"hi Underlined 
+hi DiffAdd            ctermfg=184  ctermbg=52   cterm=NONE
+"hi TabLine 
+hi mbenormal          ctermfg=187  ctermbg=237  cterm=NONE
+hi perlspecialstring  ctermfg=176  ctermbg=238  cterm=NONE
+hi mbechanged         ctermfg=255  ctermbg=237  cterm=NONE
+hi mbevisiblechanged  ctermfg=255  ctermbg=60   cterm=NONE
+hi perlspecialmatch   ctermfg=176  ctermbg=238  cterm=NONE
+hi cformat            ctermfg=176  ctermbg=238  cterm=NONE
+hi lcursor            ctermfg=232  ctermbg=118  cterm=NONE
+hi cursorim           ctermfg=232  ctermbg=107  cterm=NONE
+hi taglisttagname     ctermfg=105  ctermbg=NONE cterm=NONE
+hi mbevisiblenormal   ctermfg=252  ctermbg=60   cterm=NONE
+hi user2              ctermfg=103  ctermbg=60   cterm=NONE
+hi user1              ctermfg=48   ctermbg=60   cterm=NONE
+hi cspecialcharacter  ctermfg=176  ctermbg=238  cterm=NONE
+"hi clear 
+hi pythonbuiltin      ctermfg=66   ctermbg=NONE cterm=NONE
+hi phpstringdouble    ctermfg=254  ctermbg=NONE cterm=NONE
+hi htmltagname        ctermfg=254  ctermbg=NONE cterm=NONE
+hi javascriptstrings  ctermfg=254  ctermbg=NONE cterm=NONE
+hi htmlstring         ctermfg=254  ctermbg=NONE cterm=NONE
+hi phpstringsingle    ctermfg=254  ctermbg=NONE cterm=NONE
+"hi htmlitalic 
+"hi htmlboldunderlineitalic 
+"hi htmlbolditalic 
+"hi htmlunderlineitalic 
+"hi htmlbold 
+"hi htmlboldunderline 
+"hi htmlunderline 

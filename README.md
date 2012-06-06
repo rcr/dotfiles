@@ -12,3 +12,4 @@ Todo:
 
 - weechat nick colors
 - vim paste remap not perfect
+-	some vim colors 

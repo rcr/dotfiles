@@ -5,14 +5,14 @@ set directory=/tmp
 
 set t_Co=256
 syntax enable
-colorscheme rcr
+colorscheme industrial
 
 set nu
 set autoindent
 set smartindent
 set textwidth=0
 set backspace=2
-set expandtab     "Insert a number of spaces when tab is hit
+set noexpandtab   "Do not insert a number of spaces when tab is hit
 set tabstop=2     "Width of an existing tab
 set shiftwidth=2  "Number of spaces used for >> and <<
 set softtabstop=2 "Width of a tab when inserting
