@@ -8,4 +8,4 @@ if [ "$mut" = "" ]
   else vol="$vol"
 fi
 
-xsetroot -name "$mpd  ~  $vol  ~  $(date +%a\ %b\ %e\ %R)"
+xsetroot -name "$mpd  ~  $vol  ~  $(date +%a\ %b\ %e\ \ %R)"
