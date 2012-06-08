@@ -18,10 +18,10 @@ hi ErrorMsg           ctermfg=15   ctermbg=NONE cterm=NONE
 hi Debug              ctermfg=252  ctermbg=NONE cterm=NONE
 "hi PMenuSbar 
 hi Identifier         ctermfg=107  ctermbg=NONE cterm=NONE
-hi SpecialChar        ctermfg=252  ctermbg=NONE cterm=NONE
+hi SpecialChar        ctermfg=107  ctermbg=236  cterm=NONE
 hi Conditional        ctermfg=60   ctermbg=NONE cterm=NONE
 hi StorageClass       ctermfg=60   ctermbg=NONE cterm=NONE
-hi Todo               ctermfg=11   ctermbg=NONE cterm=NONE
+hi Todo               ctermfg=107  ctermbg=238  cterm=NONE
 hi Special            ctermfg=252  ctermbg=NONE cterm=NONE
 hi LineNr             ctermfg=241  ctermbg=NONE cterm=NONE
 hi StatusLine         ctermfg=15   ctermbg=60   cterm=NONE
@@ -89,7 +89,7 @@ hi perlspecialstring  ctermfg=176  ctermbg=238  cterm=NONE
 hi mbechanged         ctermfg=255  ctermbg=237  cterm=NONE
 hi mbevisiblechanged  ctermfg=255  ctermbg=60   cterm=NONE
 hi perlspecialmatch   ctermfg=176  ctermbg=238  cterm=NONE
-hi cformat            ctermfg=176  ctermbg=238  cterm=NONE
+hi cformat            ctermfg=107  ctermbg=236  cterm=NONE
 hi lcursor            ctermfg=232  ctermbg=118  cterm=NONE
 hi cursorim           ctermfg=232  ctermbg=107  cterm=NONE
 hi taglisttagname     ctermfg=105  ctermbg=NONE cterm=NONE
