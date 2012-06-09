@@ -2,4 +2,4 @@
 
 amixer -q set Master 2%-
 
-/home/rrobbins/.config/dwm/scripts/setroot
+/home/robbinsr/.config/dwm/scripts/setroot

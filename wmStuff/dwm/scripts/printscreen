@@ -1,0 +1,3 @@
+#!/bin/bash
+
+scrot -q 100 /home/robbinsr/pics/screenshots/scrot-%F-%H%M%S.png -e 'optipng $f'

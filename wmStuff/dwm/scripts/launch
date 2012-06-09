@@ -1,5 +1,5 @@
 #!/bin/bash
 
 (sleep 5 && firefox) & 
-(sleep 5 && urxvt256c -title Mutt -e mutt ) &
-(sleep 5 && urxvt256c -title Irc -e weechat-curses) &
+(sleep 5 && urxvt -title Mutt -e mutt ) &
+(sleep 5 && urxvt -title Irc -e weechat-curses) &
