@@ -5,7 +5,7 @@ set directory=/tmp
 
 set t_Co=256
 syntax enable
-colorscheme industrial
+colorscheme rcr
 
 set nu
 set autoindent
@@ -22,6 +22,7 @@ inoremap jj <Esc>
 nmap <Space> i_<Esc>r
 nnoremap ; :
 nnoremap : ;
+noremap w :wincmd w<CR>
 
 set hlsearch
 set smartcase
