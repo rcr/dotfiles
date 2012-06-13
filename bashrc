@@ -8,6 +8,7 @@
 set -o vi
 bind -m vi-insert '"jj": vi-movement-mode'
 bind -m vi-insert '"\C-l": clear-screen'
+bind '"\C-v":"eval $(xclip -o -selection c)"'
 
 PS1='> \W/ '
 
@@ -22,17 +23,15 @@ alias v="vim -O"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
-alias alsa="alsamixer"
-alias wicd="wicd-curses"
 alias feh="feh --fullscreen"
 alias todo="vim ~/docs/todo"
 alias reboot="sudo shutdown -r now"
 alias shutdown="sudo shutdown -h now"
 alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias umount="sudo umount"
-alias irc="weechat-curses"
 alias ff="firefox &> /dev/null &"
 
+backup() { cp $1 $1.bkp; }
 pdf () { zathura $1 &> /dev/null & }
 ex () {
   if [ -f $1 ] ; then
