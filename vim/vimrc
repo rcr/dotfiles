@@ -13,16 +13,19 @@ set smartindent
 set textwidth=0
 set backspace=2
 set noexpandtab   "Do not insert a number of spaces when tab is hit
-set tabstop=2     "Width of an existing tab
-set shiftwidth=2  "Number of spaces used for >> and <<
-set softtabstop=2 "Width of a tab when inserting
+set tabstop=4     "Width of an existing tab
+set shiftwidth=4  "Number of spaces used for >> and <<
+set softtabstop=4 "Width of a tab when inserting
 
 noremap ss :vsplit<CR>:Ex<CR>
 inoremap jj <Esc>
 nmap <Space> i_<Esc>r
 nnoremap ; :
 nnoremap : ;
-noremap w :wincmd w<CR>
+nnoremap q :wincmd w<CR>
+
+set list
+set listchars=tab:→\ 
 
 set hlsearch
 set smartcase
@@ -34,7 +37,7 @@ autocmd InsertEnter * :setlocal nohlsearch
 "Copy/Paste with xclip
 set lazyredraw
 vmap <C-c> :<Esc>`>a<CR><Esc>mx`<i<CR><Esc>my'xk$v'y!xclip -i -selection c<CR>u
-nmap <C-v> ;set paste<CR>i<CR><CR><Esc>k;.!xclip -o -selection c<CR>JxkJ;set nopaste<CR>
+nmap <C-v> ;set paste<CR>i<CR><Esc>k;.!xclip -o -selection c<CR>;set nopaste<CR>
 
 "w!! writes the file even if you don't have sudo permission
 cmap w!! %!sudo tee > /dev/null %
