@@ -8,7 +8,7 @@
 set -o vi
 bind -m vi-insert '"jj": vi-movement-mode'
 bind -m vi-insert '"\C-l": clear-screen'
-bind '"\C-v":"eval $(xclip -o -selection c)"'
+bind -x '"\C-t":"urxvt256c &> /dev/null &"'
 
 PS1='> \W/ '
 
