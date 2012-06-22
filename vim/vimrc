@@ -17,6 +17,7 @@ set tabstop=4     "Width of an existing tab
 set shiftwidth=4  "Number of spaces used for >> and <<
 set softtabstop=4 "Width of a tab when inserting
 
+nmap . .`[
 noremap ss :vsplit<CR>:Ex<CR>
 inoremap jj <Esc>
 nmap <Space> i_<Esc>r
