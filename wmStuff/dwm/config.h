@@ -23,7 +23,7 @@ static const float mfact      = 0.55; /* factor of master area size [0.05..0.95]
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = False;
 
-static const char *tags[] = { "term", "net", "irc", "mutt", "etc"};
+static const char *tags[] = { "term", "net", "irc", "etc", "mutt"};
 static const Layout layouts[] = {
   /* symbol  arrange function */
   { "~",     tile },    /* first entry is default */
@@ -35,7 +35,7 @@ static const Rule rules[] = {
   { NULL,             NULL,       "Floating", 0,           True,        -1 }, 
   { "Firefox",        NULL,       NULL,       1 << 1,      True,        -1 },
   { NULL,             NULL,       "Irc",      1 << 2,      False,       -1 }, 
-  { NULL,             NULL,       "Mutt",     1 << 3,      False,       -1 }, 
+  { NULL,             NULL,       "Mutt",     1 << 4,      False,       -1 }, 
 };
 
 /* commands */
