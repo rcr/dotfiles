@@ -39,7 +39,7 @@ autocmd InsertEnter * :setlocal nohlsearch
 
 "Copy/Paste with xclip
 set lazyredraw
-vmap <C-c> :<Esc>`>a<CR><Esc>mx`<i<CR><Esc>my'xk$v'y!xclip -i -selection c<CR>u
+vmap <C-c> y;call system('xclip -f -sel p \| xclip -sel c', @0)<CR>
 nmap <C-v> ;set paste<CR>i<CR><Esc>k;.!xclip -o -selection c<CR>;set nopaste<CR>
 
 "w!! writes the file even if you don't have sudo permission
