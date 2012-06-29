@@ -24,6 +24,8 @@ nmap <Space> i_<Esc>r
 nnoremap ; :
 nnoremap : ;
 nnoremap q :wincmd w<CR>
+vnoremap / y/<C-r>0<CR>
+
 
 set list
 set listchars=tab:→\ 
