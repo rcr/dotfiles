@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+stty -ixon
+
 set -o vi
 bind -m vi-insert '"jj": vi-movement-mode'
 bind -m vi-insert '"\C-l": clear-screen'
@@ -44,7 +46,7 @@ ex () {
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
-      *.zip)       7z x $1     ;;
+      *.zip)       7z x $1      ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
