@@ -15,10 +15,7 @@ amixer set Master 100
 
 xset r rate 250 40
 
-while true; do
-  /home/robbinsr/.config/dwm/scripts/setroot
-  sleep 3
-done &
+/home/robbinsr/.config/dwm/scripts/setroot &
 
 /home/robbinsr/.config/dwm/scripts/launch
 

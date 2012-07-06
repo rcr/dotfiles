@@ -1,11 +1,19 @@
 #!/bin/bash
 
-mpd=$(ncmpcpp --now-playing '{%a - %t}|{%f}')
-vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
-mut=$(amixer get Master | tail -1 | grep "\[on\]")
-if [ "$mut" = "" ]
-  then vol="M $vol"
-  else vol="$vol"
-fi
+while true; do
+	mpd=$(ncmpcpp --now-playing '{%a - %t}|{%f}')
+	vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
+	mut=$(amixer get Master | tail -1 | grep "\[on\]")
+	net=$(grep wlan0 /proc/net/arp)
+	if [ "$net" = "" ]
+		then net="dis"
+		else net="con"
+	fi
+	if [ "$mut" = "" ]
+	  then vol="M $vol"
+	  else vol="$vol"
+	fi
+	xsetroot -name "$mpd  ~  $net  ~  $vol  ~  $(date +%a\ %b\ %e\ \ %R)"
+	sleep 3
+done
 
-xsetroot -name "$mpd  ~  $vol  ~  $(date +%a\ %b\ %e\ \ %R)"
