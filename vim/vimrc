@@ -1,13 +1,18 @@
 set nocompatible
-set splitbelow
-set splitright
-set directory=/tmp
 
 set t_Co=256
 syntax enable
 colorscheme rcr
 
+set backup
+set writebackup
+set backupdir=$HOME/.vim/tmp
+set directory=$HOME/.vim/tmp
+
 set nu
+set cul
+set splitbelow
+set splitright
 set autoindent
 set smartindent
 set textwidth=0
@@ -16,19 +21,22 @@ set noexpandtab   "Do not insert a number of spaces when tab is hit
 set tabstop=4     "Width of an existing tab
 set shiftwidth=4  "Number of spaces used for >> and <<
 set softtabstop=4 "Width of a tab when inserting
+set gdefault      "/g flag set by default on :s substitution
+set timeoutlen=250
 
-nmap . .`[
-noremap ss :vsplit<CR>:Ex<CR>
+cmap w!! %!sudo tee > /dev/null %<CR>
 inoremap jj <Esc>
-nmap <Space> i_<Esc>r
+nnoremap . .`[
 nnoremap ; :
-nnoremap : ;
-nnoremap q :wincmd w<CR>
+nnoremap <Space> i_<Esc>r
+nnoremap j gj
+nnoremap k gk
+nnoremap w :wincmd w<CR>
+noremap ss :Vex!<CR>
 vnoremap / y/<C-r>0<CR>
-
-
+   
 set list
-set listchars=tab:→\ 
+set listchars=tab:-\ 
 
 set hlsearch
 set smartcase
@@ -37,10 +45,12 @@ nnoremap <CR> :noh<Return><Esc>
 autocmd InsertLeave * :setlocal hlsearch
 autocmd InsertEnter * :setlocal nohlsearch
 
-"Copy/Paste with xclip
-set lazyredraw
-vmap <C-c> y;call system('xclip -f -sel p \| xclip -sel c', @0)<CR>
-nmap <C-v> ;set paste<CR>i<CR><Esc>k;.!xclip -o -selection c<CR>;set nopaste<CR>
+set viminfo+=n$HOME/.vim/viminfo
+autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-"w!! writes the file even if you don't have sudo permission
-cmap w!! %!sudo tee > /dev/null %
+set lazyredraw
+vmap <C-c> y:call system('xclip -f -sel p \| xclip -sel c', @0)<CR>
+nmap <C-v> :set paste<CR>O<Esc>:.!xclip -o -selection c<CR>:set nopaste<CR>
+
+
+autocmd VimResized * exe "normal! \<c-w>="
