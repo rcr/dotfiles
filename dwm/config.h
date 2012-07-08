@@ -39,9 +39,9 @@ static const Rule rules[] = {
 };
 
 /* commands */
-static const char *termcmd[]      = { "urxvt", NULL };
-static const char *floattermcmd[] = { "urxvt", "-title", "Floating", "-geometry","90x24+300+200", NULL };
-static const char *musiccmd[]     = { "urxvt", "-title", "Floating", "-geometry","80x60+400+200","-e", "ncmpcpp", NULL };
+static const char *termcmd[]      = { "urxvtc", NULL };
+static const char *floattermcmd[] = { "urxvtc", "-title", "Floating", "-geometry","90x24+300+200", NULL };
+static const char *musiccmd[]     = { "urxvtc", "-title", "Floating", "-geometry","80x60+400+200","-e", "ncmpcpp", NULL };
 static const char *prtscrcmd[]    = { "/home/robbinsr/.config/dwm/scripts/printscreen", NULL };
 static const char *togglemute[]   = { "/home/robbinsr/.config/dwm/scripts/togglemute", NULL };
 static const char *voldown[]      = { "/home/robbinsr/.config/dwm/scripts/voldown", NULL };
