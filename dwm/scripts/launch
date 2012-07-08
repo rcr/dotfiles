@@ -1,5 +1,18 @@
 #!/bin/bash
 
-(sleep 5 && firefox) & 
-(sleep 5 && urxvt -title Mutt -e mutt ) &
-(sleep 5 && urxvt -title Irc -e weechat-curses) &
+#in /etc/rc.local:
+
+#wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf & 
+#(sleep 3 && dhcpcd wlan0) &
+
+#Try a few times, to give network a chance to connect
+for $count in {1..5}; do
+	net=$(cat /sys/class/net/wlan0/flags)
+	if [ "$net" = "0x1003" ]; then
+		firefox & 
+		urxvt -title Mutt -e mutt &
+		urxvt -title Irc -e weechat-curses &
+		break
+	fi
+	sleep 5
+done
