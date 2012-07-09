@@ -1,0 +1,8 @@
+[user]
+	email = mail@robbinsr.com
+	name = Richard Robbins
+[color]
+	ui = auto
+[alias]
+	st = status
+	lg = log --graph --decorate --oneline
