@@ -4,10 +4,10 @@ while true; do
 	mpd=$(ncmpcpp --now-playing '{%a - %t}|{%f}')
 	vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
 	mut=$(amixer get Master | tail -1 | grep "\[on\]")
-	net=$(cat /sys/class/net/wlan0/flags)
-	if [ "$net" = "0x1003" ]
-		then net="con"
-		else net="dis"
+	net=$(iwgetid)
+	if [ "$net" = "" ]
+		then net="dis"
+		else net="con"
 	fi
 	if [ "$mut" = "" ]
 	  then vol="M $vol"

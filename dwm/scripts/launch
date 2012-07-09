@@ -6,9 +6,9 @@
 #(sleep 3 && dhcpcd wlan0) &
 
 #Try a few times, to give network a chance to connect
-for $count in {1..5}; do
-	net=$(cat /sys/class/net/wlan0/flags)
-	if [ "$net" = "0x1003" ]; then
+for count in {1..5}; do
+	net=$(iwgetid)
+	if [ "$net" != "" ]; then
 		firefox & 
 		urxvtc -title Mutt -e mutt &
 		urxvtc -title Irc -e weechat-curses &
