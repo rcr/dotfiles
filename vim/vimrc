@@ -15,6 +15,7 @@ set splitbelow
 set splitright
 set autoindent
 set smartindent
+set scrolloff=3
 set textwidth=0
 set backspace=2
 set noexpandtab   "Do not insert a number of spaces when tab is hit
@@ -22,23 +23,29 @@ set tabstop=4     "Width of an existing tab
 set shiftwidth=4  "Number of spaces used for >> and <<
 set softtabstop=4 "Width of a tab when inserting
 set gdefault      "/g flag set by default on :s substitution
-set timeoutlen=250
+set autochdir
 
-cmap w!! %!sudo tee > /dev/null %<CR>
+cnoremap w!! %!sudo tee > /dev/null %<CR>
+cnoremap ss mksession! $HOME/.vim/session.vim<CR>
 inoremap jj <Esc>
 nnoremap . .`[
 nnoremap ; :
 nnoremap <Space> i_<Esc>r
 nnoremap j gj
 nnoremap k gk
+nnoremap mm :silent !tput clear<CR>:!make<CR>
 nnoremap w :wincmd w<CR>
-noremap ss :Vex!<CR>
+nnoremap ss :Vex!<CR>
+nnoremap tt :silent Tex<CR>
 vnoremap / y/<C-r>0<CR>
-   
+inoremap {<CR> {<CR>}<Esc>O
+inoremap /*   */<Esc>3<Left>i
+
 set list
 set listchars=tab:-\ 
 
 set hlsearch
+set incsearch
 set smartcase
 set ignorecase
 nnoremap <CR> :noh<Return><Esc>
@@ -51,6 +58,5 @@ autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
 set lazyredraw
 vmap <C-c> y:call system('xclip -f -sel p \| xclip -sel c', @0)<CR>
 nmap <C-v> :set paste<CR>O<Esc>:.!xclip -o -selection c<CR>:set nopaste<CR>
-
 
 autocmd VimResized * exe "normal! \<c-w>="

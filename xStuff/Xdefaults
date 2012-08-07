@@ -48,6 +48,12 @@ URxvt*color14:           #6096bf
 URxvt*color7:            #899ca1
 URxvt*color15:           #c0c0c0
 
+!Extra colors. To get these working, recompile rxvt-unicode with added lines in xdefaults.C:
+!:150 ~ 'RSTRG (Rs_color + minCOLOR + 16, "color16", "color"),' for each added color to be used.
+!./configure --disable-everything --enabled-256-color --enable-font-styles --enable-perl \
+! --enable-mousewheel
+
+
 
 
 !"Pastel" traditional unix colors
