@@ -39,7 +39,7 @@ nnoremap ss :Vex!<CR>
 nnoremap tt :silent Tex<CR>
 vnoremap / y/<C-r>0<CR>
 inoremap {<CR> {<CR>}<Esc>O
-inoremap /*   */<Esc>3<Left>i
+inoremap /* /*   */<Esc>3<Left>i
 
 set list
 set listchars=tab:-\ 
