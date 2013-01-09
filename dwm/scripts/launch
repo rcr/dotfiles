@@ -9,7 +9,6 @@
 for count in {1..5}; do
 	net=$(iwgetid)
 	if [ "$net" != "" ]; then
-		firefox & 
 		urxvtc -title Mutt -e mutt &
 		urxvtc -title Irc -e weechat-curses &
 		break

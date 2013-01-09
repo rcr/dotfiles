@@ -1,6 +1,6 @@
 URxvt*title:             urxvt
 
-URxvt*font:              xft:Termsyn:size=8
+URxvt*font:              xft:DejaVu Sans Mono:pixelsize=12
 
 URxvt*scrollBar:         false
 URxvt*secondaryscroll:   true
@@ -8,7 +8,7 @@ URxvt*cursorBlink:       true
 URxvt*cursorUnderline:   false
 
 URxvt*perl-ext-common:   default,matcher
-URxvt*urlLauncher:       /usr/bin/firefox
+URxvt*urlLauncher:       /usr/bin/dwb
 URxvt*matcher.button:    1
 
 URxvt*allow_bold:        true
@@ -47,37 +47,3 @@ URxvt*color14:           #6096bf
 !white
 URxvt*color7:            #899ca1
 URxvt*color15:           #c0c0c0
-
-!Extra colors. To get these working, recompile rxvt-unicode with added lines in xdefaults.C:
-!:150 ~ 'RSTRG (Rs_color + minCOLOR + 16, "color16", "color"),' for each added color to be used.
-!./configure --disable-everything --enabled-256-color --enable-font-styles --enable-perl \
-! --enable-mousewheel
-
-
-
-
-!"Pastel" traditional unix colors
-!Black
-!URxvt*color0:           #3d3e3d
-!URxvt*color8:           #5a5b5c
-!Red
-!URxvt*color1:           #755a5b
-!URxvt*color9:           #a37679
-!Green
-!URxvt*color2:           #68755a
-!URxvt*color10:          #87a376
-!Yellow
-!URxvt*color3:           #756e5a
-!URxvt*color11:          #a39b76
-!Blue
-!URxvt*color4:           #5b6976
-!URxvt*color12:          #758ba3
-!Magenta
-!URxvt*color5:           #755b76
-!URxvt*color13:          #9f76a3
-!Cyan
-!URxvt*color6:           #5b7674
-!URxvt*color14:          #75a3a1
-!White
-!URxvt*color7:           #808080
-!URxvt*color15:          #aeafb0

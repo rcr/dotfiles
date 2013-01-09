@@ -17,6 +17,8 @@ amixer set Master 100
 
 xset r rate 250 40
 
+setxkbmap -option ctrl:nocaps
+
 while true; do
 	/home/robbinsr/.config/dwm/scripts/setroot
 	sleep 3

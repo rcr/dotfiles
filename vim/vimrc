@@ -39,7 +39,7 @@ nnoremap ss :Vex!<CR>
 nnoremap tt :silent Tex<CR>
 vnoremap / y/<C-r>0<CR>
 inoremap {<CR> {<CR>}<Esc>O
-inoremap /* /*   */<Esc>3<Left>i
+inoremap /* /*  */<Esc>2<Left>i
 
 set list
 set listchars=tab:-\ 
@@ -56,7 +56,7 @@ set viminfo+=n$HOME/.vim/viminfo
 autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 set lazyredraw
-vmap <C-c> y:call system('xclip -f -sel p \| xclip -sel c', @0)<CR>
-nmap <C-v> :set paste<CR>O<Esc>:.!xclip -o -selection c<CR>:set nopaste<CR>
+vmap <C-c> y:call system('xclip -f -sel p <Bar> xclip -sel c', @0)<CR>
+nmap <C-v> :set paste<CR>O<Esc>:.!xclip -o -sel c<CR>:set nopaste<CR>
 
 autocmd VimResized * exe "normal! \<c-w>="

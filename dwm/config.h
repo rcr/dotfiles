@@ -3,7 +3,7 @@
   { MODKEY,           KEY,  view,  {.ui=1 << TAG} },\
   { MODKEY|ShiftMask, KEY,  tag,   {.ui=1 << TAG} },
 
-//For status bar color from norm to sel -> dwm.c:~750s/sel/norm
+/* For status bar color from norm to sel -> dwm.c:~750s/sel/norm */
 static const char normbordercolor[] = "#696969";
 static const char normbgcolor[]     = "#262626";
 static const char normfgcolor[]     = "#696969";
@@ -33,7 +33,6 @@ static const Layout layouts[] = {
 static const Rule rules[] = {
   /* class            instance    title       tags mask    isfloating   monitor */
   { NULL,             NULL,       "Floating", 0,           True,        -1 }, 
-  { "Firefox",        NULL,       NULL,       1 << 1,      True,        -1 },
   { NULL,             NULL,       "Irc",      1 << 2,      False,       -1 }, 
   { NULL,             NULL,       "Mutt",     1 << 4,      False,       -1 }, 
 };
@@ -71,18 +70,20 @@ static Key keys[] = {
   TAGKEYS(                        XK_4,                      3)
   TAGKEYS(                        XK_5,                      4)
   { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-//  { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-//  { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-//  { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-//  { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-//  { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-//  { MODKEY,                       XK_space,  setlayout,      {0} },
-//  { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-//  { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-//  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-//  { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-//  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-//  { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+/*
+  { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+  { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+  { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+  { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+  { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+  { MODKEY,                       XK_space,  setlayout,      {0} },
+  { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+  { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+  { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+*/
 };
 
 /* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */

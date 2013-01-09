@@ -1,8 +1,8 @@
 [user]
 	email = mail@robbinsr.com
-	name = Richard Robbins
+	name = robbinsr
 [color]
 	ui = auto
 [alias]
 	st = status
-	lg = log --graph --decorate --oneline
+	lg = log --graph --decorate --pretty=oneline --abbrev-commit

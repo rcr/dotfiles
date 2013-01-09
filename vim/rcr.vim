@@ -5,6 +5,7 @@ hi SpecialComment     ctermfg=252  ctermbg=NONE cterm=NONE
 hi Typedef            ctermfg=60   ctermbg=NONE cterm=NONE
 hi Title              ctermfg=223  ctermbg=52   cterm=NONE
 hi Folded             ctermfg=15   ctermbg=236  cterm=NONE
+hi colorcolumn        ctermbg=236  ctermfg=NONE cterm=NONE
 "hi PreCondit 
 "hi Include 
 "hi TabLineSel 
@@ -41,7 +42,8 @@ hi Character          ctermfg=67   ctermbg=236  cterm=NONE
 hi Number             ctermfg=67   ctermbg=236  cterm=NONE
 hi Boolean            ctermfg=67   ctermbg=NONE cterm=NONE
 hi Operator           ctermfg=60   ctermbg=NONE cterm=NONE
-hi CursorLine         ctermfg=NONE ctermbg=238  cterm=NONE
+hi CursorLine         ctermfg=NONE ctermbg=NONE cterm=NONE
+hi CursorLineNr       ctermfg=252  ctermbg=NONE cterm=NONE
 "hi Union 
 "hi TabLineFill 
 hi Question           ctermfg=15   ctermbg=NONE cterm=NONE
@@ -67,7 +69,7 @@ hi Cursor             ctermfg=NONE ctermbg=107  cterm=NONE
 "hi SpellLocal 
 hi Error              ctermfg=NONE ctermbg=196  cterm=NONE
 hi PMenu              ctermfg=252  ctermbg=NONE cterm=NONE
-hi SpecialKey         ctermfg=75   ctermbg=NONE cterm=NONE
+hi SpecialKey         ctermfg=237   ctermbg=NONE cterm=NONE
 hi Constant           ctermfg=67   ctermbg=236  cterm=NONE
 "hi DefinedName 
 hi Tag                ctermfg=252  ctermbg=NONE cterm=NONE

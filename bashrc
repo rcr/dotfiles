@@ -20,20 +20,22 @@ export GREP_COLOR="1;33"
 
 alias sudo='sudo '
 alias ..='cd ..'
+alias ...="cd ../.."
 alias e="exit"
 alias v="vim -O"
-alias ls='ls --color=auto'
+alias vs="vim -S ~/.vim/session.vim"
+alias ls='ls --color=auto --group-directories-first'
+
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 alias feh="feh --fullscreen"
 alias todo="vim ~/docs/todo"
+
 alias reboot="sudo shutdown -r now"
 alias shutdown="sudo shutdown -h now"
 alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias umount="sudo umount"
-alias ff="firefox &> /dev/null &"
 
-backup() { cp $1 $1.bkp; }
 pdf () { zathura $1 &> /dev/null & }
 ex () {
   if [ -f $1 ] ; then
@@ -47,7 +49,6 @@ ex () {
       *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
       *.zip)       7z x $1      ;;
-      *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
