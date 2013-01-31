@@ -1,5 +1,0 @@
-#!/bin/bash
-
-amixer -q set Master 2%-
-
-/home/robbinsr/.config/dwm/scripts/setroot

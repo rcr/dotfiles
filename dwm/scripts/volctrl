@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" == "M" ]
+	then amixer -q set Master toggle
+elif [ "$1" == "U" ]
+	then amixer -q set Master 2%+
+elif [ "$1" == "D" ] 
+	then amixer -q set Master 2%-
+fi
+
+/home/robbinsr/scripts/setroot

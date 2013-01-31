@@ -1,5 +1,0 @@
-#!/bin/bash
-
-amixer -q set Master toggle
-
-/home/robbinsr/.config/dwm/scripts/setroot
