@@ -1,9 +1,19 @@
 #!/bin/bash
 
-mpd=$(ncmpcpp --now-playing '{%a - %t}|{%f}')
+if cmus-remote -C >/dev/null 2>&1 ; then
+	info=$(cmus-remote -Q)
+	state=$(echo "$info" | sed -n 's/^status //p')
+	if [ "$state" = "stopped" ];
+		then
+			msc=""
+		else
+			artist=$(echo "$info" | sed -n 's/^tag artist //p')
+			title=$(echo "$info" | sed -n 's/^tag title //p')
+			msc="$artist  -  $title"
+	fi
+fi
 vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
 mut=$(amixer get Master | tail -1 | grep "\[on\]")
-net=$(iwgetid)
 if [ "$net" = "" ]
 	then net="dis"
 	else net="con"
@@ -12,4 +22,4 @@ if [ "$mut" = "" ]
   then vol="M $vol"
   else vol="$vol"
 fi
-xsetroot -name "$mpd  ~  $net  ~  $vol  ~  $(date +%a\ %b\ %e\ \ %R)"
+xsetroot -name "$msc  ~  $vol  ~  $(date +%a\ %b\ %e\ \ %R)"

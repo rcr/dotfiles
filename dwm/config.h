@@ -41,7 +41,6 @@ static const Rule rules[] = {
 static const char *browsercmd[]   = { "dwb" };
 static const char *termcmd[]      = { "urxvtc", NULL };
 static const char *floattermcmd[] = { "urxvtc", "-title", "Floating", "-geometry","90x24+300+200", NULL };
-static const char *musiccmd[]     = { "urxvtc", "-title", "Floating", "-geometry","80x60+400+200","-e", "ncmpcpp", NULL };
 static const char *prtscrcmd[]    = { "/home/robbinsr/scripts/printscreen", NULL };
 static const char *togglemute[]   = { "/home/robbinsr/scripts/volctrl", "M", NULL };
 static const char *voldown[]      = { "/home/robbinsr/scripts/volctrl", "D", NULL };
@@ -51,7 +50,6 @@ static Key keys[] = {
   /* modifier                     key        function        argument */
   { 0,                            XK_F2,     spawn,          {.v = floattermcmd } },
   { 0,                            XK_F3,     spawn,          {.v = termcmd } },
-  { 0,                            XK_F4,     spawn,          {.v = musiccmd } },
   { 0,                            XK_F10,    spawn,          {.v = togglemute } }, 
   { 0,                            XK_F11,    spawn,          {.v = voldown } }, 
   { 0,                            XK_F12,    spawn,          {.v = volup } }, 
