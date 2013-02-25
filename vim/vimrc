@@ -8,55 +8,71 @@ set backup
 set writebackup
 set backupdir=$HOME/.vim/tmp
 set directory=$HOME/.vim/tmp
+set viminfo+=n$HOME/.vim/viminfo
 
 set nu
 set cul
-set splitbelow
-set splitright
+set title
+set lazyredraw
 set autoindent
+set splitbelow
 set smartindent
 set scrolloff=3
-set textwidth=0
 set backspace=2
-set noexpandtab   "Do not insert a number of spaces when tab is hit
-set tabstop=4     "Width of an existing tab
-set shiftwidth=4  "Number of spaces used for >> and <<
-set softtabstop=4 "Width of a tab when inserting
-set gdefault      "/g flag set by default on :s substitution
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set gdefault
 set autochdir
+set shortmess=atI
+
+let mapleader = ","
 
 cnoremap w!! %!sudo tee > /dev/null %<CR>
-cnoremap ss mksession! $HOME/.vim/session.vim<CR>
+cnoremap s!! mksession! $HOME/.vim/session.vim<CR>
+
 inoremap jj <Esc>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap /* /*  */<Esc>2<Left>i
+inoremap // //
+
 nnoremap . .`[
 nnoremap ; :
+nnoremap ' `
 nnoremap <Space> i_<Esc>r
 nnoremap j gj
 nnoremap k gk
-nnoremap mm :silent !tput clear<CR>:!make<CR>
-nnoremap w :wincmd w<CR>
-nnoremap ss :Vex!<CR>
-nnoremap tt :silent Tex<CR>
+nnoremap gs :wincmd w<CR>
+nnoremap <Leader>s :Vex!<CR>
+nnoremap <Leader>t :Tex<CR>
+nnoremap <Leader>m :silent !tput clear<CR>:!make<CR>
+
 vnoremap / y/<C-r>0<CR>
-inoremap {<CR> {<CR>}<Esc>O
-inoremap /* /*  */<Esc>2<Left>i
 
 set list
-set listchars=tab:-\ 
+set listchars=tab:-\ ,trail:-
 
 set hlsearch
 set incsearch
 set smartcase
 set ignorecase
+"can enter be more useful?
 nnoremap <CR> :noh<Return><Esc>
 autocmd InsertLeave * :setlocal hlsearch
 autocmd InsertEnter * :setlocal nohlsearch
 
-set viminfo+=n$HOME/.vim/viminfo
-autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
+set laststatus=2
+set statusline=\ %F
+set statusline+=\ :\ %L
+set statusline+=\ %p%%
+set statusline+=\ %02.3c
+set statusline+=\ %M
+set statusline+=\ %r
 
-set lazyredraw
-vmap <C-c> y:call system('xclip -f -sel p <Bar> xclip -sel c', @0)<CR>
-nmap <C-v> :set paste<CR>O<Esc>:.!xclip -o -sel c<CR>:set nopaste<CR>
+vmap <F7> :w !xclip -f -sel p <Bar> xclip -sel c<CR><CR>
+nmap <F8> :r !xclip -o -sel c<CR>
 
 autocmd VimResized * exe "normal! \<c-w>="
+
+autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
