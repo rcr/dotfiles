@@ -6,3 +6,5 @@
 [alias]
 	st = status
 	lg = log --graph --decorate --pretty=oneline --abbrev-commit
+[push]
+	default = simple

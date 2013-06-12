@@ -13,17 +13,17 @@ urxvtd -q -o -f
 
 feh --bg-scale /home/robbinsr/.background.png
 
-amixer set Master 100
+amixer set Master 100%
 
 xset r rate 250 40
-
 setxkbmap -option ctrl:nocaps
 
 while true; do
-	/home/robbinsr/.config/dwm/scripts/setroot
+	/home/robbinsr/scripts/setroot
 	sleep 3
 done &
 
-/home/robbinsr/.config/dwm/scripts/launch
+(sleep 3 && urxvtc -title "Irc" -e "weechat-curses") &
+(sleep 5 && urxvtc -title "Mutt" -e "mutt") &
 
 exec dwm

@@ -14,10 +14,6 @@ if cmus-remote -C >/dev/null 2>&1 ; then
 fi
 vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
 mut=$(amixer get Master | tail -1 | grep "\[on\]")
-if [ "$net" = "" ]
-	then net="dis"
-	else net="con"
-fi
 if [ "$mut" = "" ]
   then vol="M $vol"
   else vol="$vol"

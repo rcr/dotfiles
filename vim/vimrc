@@ -70,9 +70,6 @@ set statusline+=\ %02.3c
 set statusline+=\ %M
 set statusline+=\ %r
 
-vmap <F7> :w !xclip -f -sel p <Bar> xclip -sel c<CR><CR>
-nmap <F8> :r !xclip -o -sel c<CR>
-
 autocmd VimResized * exe "normal! \<c-w>="
 
 autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif

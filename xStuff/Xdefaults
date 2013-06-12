@@ -7,14 +7,19 @@ URxvt*secondaryscroll:   true
 URxvt*cursorBlink:       true
 URxvt*cursorUnderline:   false
 
-URxvt*perl-ext-common:   default,matcher
-URxvt*urlLauncher:       /usr/bin/dwb
-URxvt*matcher.button:    1
+!package urxvt-perls
+URxvt.perl-ext-common:      default,clipboard,url-select
+URxvt.matcher.button:       1
+URxvt.url-select.underline: true
+URxvt.url-select.launcher:  luakit
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.C-v:           perl:clipboard:paste
+URxvt.clipboard.autocopy:   true
+URxvt.clipboard.copycmd:    xclip -f -sel p | xclip -sel c
 
 URxvt*allow_bold:        true
 URxvt*depth:             24
 URxvt*dynamicColors:     on
-
 URxvt*visualBell:        false
 URxvt*urgentOnBell:      true
 
