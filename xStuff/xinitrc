@@ -11,19 +11,20 @@ fi
 
 urxvtd -q -o -f
 
-feh --bg-scale /home/robbinsr/.background.png
+feh --no-fehbg --force-aliasing --bg-center /home/rcr/.wallpaper.jpg
 
-amixer set Master 100%
+amixer -q set Master off 100%
 
+xset m 1 2
 xset r rate 250 40
 setxkbmap -option ctrl:nocaps
+unclutter -idle 1 &
 
 while true; do
-	/home/robbinsr/scripts/setroot
+	/home/rcr/scripts/setroot
 	sleep 3
 done &
 
 (sleep 3 && urxvtc -title "Irc" -e "weechat-curses") &
-(sleep 5 && urxvtc -title "Mutt" -e "mutt") &
 
 exec dwm

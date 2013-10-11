@@ -20,10 +20,10 @@ fi
 eval $(dircolors -b)
 
 export GREP_COLOR="1;33"
+export LESSHISTFILE=/dev/null
 
 alias sudo='sudo '
 alias ..='cd ..'
-alias ...="cd ../.."
 alias e="exit"
 alias v="vim -O"
 alias vs="vim -S ~/.vim/session.vim"
@@ -36,7 +36,7 @@ alias todo="vim ~/words/todo"
 
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown -h now"
-alias mount="sudo mount -o gid=users,fmask=113,dmask=002"
+alias mount="sudo mount -o uid=rcr,gid=users,fmask=113,dmask=002"
 alias umount="sudo umount"
 
 pdf () { mupdf "$1" &> /dev/null & }

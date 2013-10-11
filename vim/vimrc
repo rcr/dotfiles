@@ -3,6 +3,7 @@ set nocompatible
 set t_Co=256
 syntax enable
 colorscheme rcr
+filetype plugin indent on
 
 set backup
 set writebackup
@@ -19,13 +20,12 @@ set splitbelow
 set smartindent
 set scrolloff=3
 set backspace=2
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set gdefault
 set autochdir
-set shortmess=atI
+set shortmess=atIO
+set noexpandtab
+set sw=4 ts=4 sts=4
+autocmd filetype *.py setlocal expandtab
 
 let mapleader = ","
 
@@ -52,12 +52,12 @@ vnoremap / y/<C-r>0<CR>
 
 set list
 set listchars=tab:-\ ,trail:-
+set fillchars=vert:│
 
 set hlsearch
 set incsearch
 set smartcase
 set ignorecase
-"can enter be more useful?
 nnoremap <CR> :noh<Return><Esc>
 autocmd InsertLeave * :setlocal hlsearch
 autocmd InsertEnter * :setlocal nohlsearch
@@ -70,6 +70,16 @@ set statusline+=\ %02.3c
 set statusline+=\ %M
 set statusline+=\ %r
 
-autocmd VimResized * exe "normal! \<c-w>="
+highlight OverLength ctermbg=red
+match OverLength /\%81v.\+/
 
+autocmd VimResized * exe "normal! \<c-w>="
 autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+"Taglist
+map <Leader>a :TlistToggle<CR>
+let Tlist_Use_Right_Window = 1
+let Tlist_Close_On_Select = 1
+let Tlist_WinWidth = 35
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
