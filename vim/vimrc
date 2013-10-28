@@ -33,6 +33,7 @@ cnoremap w!! %!sudo tee > /dev/null %<CR>
 cnoremap s!! mksession! $HOME/.vim/session.vim<CR>
 
 inoremap jj <Esc>
+inoremap jk <Esc>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap /* /*  */<Esc>2<Left>i
 inoremap // //
@@ -52,7 +53,7 @@ vnoremap / y/<C-r>0<CR>
 
 set list
 set listchars=tab:-\ ,trail:-
-set fillchars=vert:│
+set fillchars=fold:-
 
 set hlsearch
 set incsearch
@@ -75,6 +76,8 @@ match OverLength /\%81v.\+/
 
 autocmd VimResized * exe "normal! \<c-w>="
 autocmd BufReadPost * if line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+let g:netrw_list_hide='.*\.o$'
 
 "Taglist
 map <Leader>a :TlistToggle<CR>
