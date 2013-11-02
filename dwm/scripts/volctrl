@@ -8,4 +8,4 @@ elif [ "$1" == "D" ]
 	then amixer -q set Master 2%-
 fi
 
-/home/robbinsr/scripts/setroot
+/home/rcr/scripts/setroot

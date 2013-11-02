@@ -21,7 +21,7 @@ setxkbmap -option ctrl:nocaps
 
 while true; do
 	/home/rcr/scripts/setroot
-	sleep 3
+	sleep 60
 done &
 
 (sleep 3 && urxvtc -title "Irc" -e "weechat-curses") &
