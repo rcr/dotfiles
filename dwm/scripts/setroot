@@ -1,17 +1,17 @@
 #!/bin/bash
 
-if cmus-remote -C >/dev/null 2>&1 ; then
-	info=$(cmus-remote -Q)
-	state=$(echo "$info" | sed -n 's/^status //p')
-	if [ "$state" = "stopped" ];
-		then
-			msc=""
-		else
-			artist=$(echo "$info" | sed -n 's/^tag artist //p')
-			title=$(echo "$info" | sed -n 's/^tag title //p')
-			msc="$artist  -  $title"
-	fi
-fi
+#if cmus-remote -C >/dev/null 2>&1 ; then
+#	info=$(cmus-remote -Q)
+#	state=$(echo "$info" | sed -n 's/^status //p')
+#	if [ "$state" = "stopped" ];
+#		then
+#			msc=""
+#		else
+#			artist=$(echo "$info" | sed -n 's/^tag artist //p')
+#			title=$(echo "$info" | sed -n 's/^tag title //p')
+#			msc="$artist  -  $title"
+#	fi
+#fi
 vol=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
 mut=$(amixer get Master | tail -1 | grep "\[on\]")
 if [ "$mut" = "" ]

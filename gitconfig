@@ -1,10 +1,13 @@
 [user]
 	email = mail@robbinsr.com
-	name = robbinsr
+	name = Richard Robbins
 [color]
 	ui = auto
 [alias]
-	st = status
+	staged = diff --cached
+	st = status -sb
 	lg = log --graph --decorate --pretty=oneline --abbrev-commit
 [push]
 	default = simple
+[diff]
+	algorithm = patience

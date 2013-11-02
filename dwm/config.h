@@ -34,26 +34,26 @@ static const Rule rules[] = {
   /* class            instance    title       tags mask    isfloating   monitor */
   { NULL,             NULL,       "Floating", 0,           True,        -1 }, 
   { NULL,             NULL,       "Irc",      1 << 2,      False,       -1 }, 
-  { NULL,             NULL,       "Mutt",     1 << 4,      False,       -1 }, 
-  { "Steam",          NULL,       NULL,       0,           True,        -1 }, 
+  { "Steam",          NULL,       NULL,       0 << 3,      True,        -1 }, 
+  { "Skype",          NULL,       NULL,       0 << 3,      True,        -1 }, 
 };
 
 /* commands */
-static const char *browsercmd[]   = { "luakit", NULL };
+static const char *browsercmd[]   = { "firefox", NULL };
 static const char *termcmd[]      = { "urxvtc", NULL };
 static const char *floattermcmd[] = { "urxvtc", "-title", "Floating", "-geometry","90x24+300+200", NULL };
-static const char *prtscrcmd[]    = { "/home/robbinsr/scripts/printscreen", NULL };
-static const char *togglemute[]   = { "/home/robbinsr/scripts/volctrl", "M", NULL };
-static const char *voldown[]      = { "/home/robbinsr/scripts/volctrl", "D", NULL };
-static const char *volup[]        = { "/home/robbinsr/scripts/volctrl", "U", NULL };
+static const char *prtscrcmd[]    = { "/home/rcr/scripts/printscreen", NULL };
+static const char *togglemute[]   = { "/home/rcr/scripts/volctrl", "M", NULL };
+static const char *voldown[]      = { "/home/rcr/scripts/volctrl", "D", NULL };
+static const char *volup[]        = { "/home/rcr/scripts/volctrl", "U", NULL };
 
 static Key keys[] = {
   /* modifier                     key        function        argument */
   { 0,                            XK_F2,     spawn,          {.v = floattermcmd } },
   { 0,                            XK_F3,     spawn,          {.v = termcmd } },
-  { 0,                            XK_F10,    spawn,          {.v = togglemute } }, 
-  { 0,                            XK_F11,    spawn,          {.v = voldown } }, 
-  { 0,                            XK_F12,    spawn,          {.v = volup } }, 
+  { 0,                            XK_F10,    spawn,          {.v = togglemute } },
+  { 0,                            XK_F11,    spawn,          {.v = voldown } },
+  { 0,                            XK_F12,    spawn,          {.v = volup } },
   { 0,                            XK_Print,  spawn,          {.v = prtscrcmd } },
   { MODKEY,                       XK_F2,     spawn,          {.v = browsercmd } },
   { MODKEY,                       XK_b,      togglebar,      {0} },

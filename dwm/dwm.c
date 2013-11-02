@@ -1612,11 +1612,11 @@ setup(void) {
 	dc.norm[ColBorder] = getcolor(normbordercolor);
 	dc.norm[ColBG] = getcolor(normbgcolor);
 	dc.norm[ColFG] = getcolor(normfgcolor);
-  dc.norm[ColUrg] = getcolor(urgbgcolor);
+	dc.norm[ColUrg] = getcolor(urgbgcolor);
 	dc.sel[ColBorder] = getcolor(selbordercolor);
 	dc.sel[ColBG] = getcolor(selbgcolor);
 	dc.sel[ColFG] = getcolor(selfgcolor);
-  dc.sel[ColUrg] = getcolor(urgbgcolor);
+	dc.sel[ColUrg] = getcolor(urgbgcolor);
 	dc.drawable = XCreatePixmap(dpy, root, DisplayWidth(dpy, screen), bh, DefaultDepth(dpy, screen));
 	dc.gc = XCreateGC(dpy, root, 0, NULL);
 	XSetLineAttributes(dpy, dc.gc, 1, LineSolid, CapButt, JoinMiter);
