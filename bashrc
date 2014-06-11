@@ -19,7 +19,7 @@ fi
 
 eval $(dircolors -b)
 
-export GREP_COLOR="1;33"
+export GREP_COLORS="fn=36:ln=36:mt=32"
 export LESSHISTFILE=/dev/null
 
 alias sudo='sudo '
@@ -28,34 +28,12 @@ alias e="exit"
 alias v="vim -O"
 alias vs="vim -S ~/.vim/session.vim"
 alias ls='ls --color=auto --group-directories-first'
-
-alias grep='grep --color=auto'
+alias grep='grep -n --color=auto'
 alias mkdir='mkdir -p -v'
 alias feh="feh --fullscreen"
-alias todo="vim ~/words/todo"
+alias todo="vim ~/.todo"
 
-alias reboot="sudo reboot"
+alias reboot="sudo shutdown -r now"
 alias shutdown="sudo shutdown -h now"
 alias mount="sudo mount -o uid=rcr,gid=users,fmask=113,dmask=002"
 alias umount="sudo umount"
-
-pdf () { mupdf "$1" &> /dev/null & }
-ex () {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       7z x $1      ;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}

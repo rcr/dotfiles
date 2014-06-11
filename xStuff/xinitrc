@@ -11,10 +11,13 @@ fi
 
 urxvtd -q -o -f
 
-feh --no-fehbg --force-aliasing --bg-center /home/rcr/.wallpaper.jpg
+xrdb /home/rcr/.Xresources
 
-amixer -q set Master off 100%
+#feh --no-fehbg --force-aliasing --bg-center /home/rcr/.wallpaper.jpg
 
+#amixer -q set Master off 100%
+
+xset -b
 xset m 1 2
 xset r rate 250 40
 setxkbmap -option ctrl:nocaps
@@ -24,6 +27,6 @@ while true; do
 	sleep 60
 done &
 
-(sleep 3 && urxvtc -title "Irc" -e "weechat-curses") &
+#(sleep 3 && urxvtc -title "Irc" -e "weechat-curses") &
 
 exec dwm
